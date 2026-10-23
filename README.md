@@ -63,3 +63,5 @@ My labeled wiring photo and Serial Monitor screenshots are pending upload. The s
 
 ## PROOF OF MOLE UNABLE TO OPEN:
 <img width="1512" height="982" alt="Screenshot 2026-10-23 at 11 56 19 PM" src="https://github.com/user-attachments/assets/8496b7a2-c9c2-4cf4-ad57-0be5912a1186" />
+
+<img width="922" height="2049" alt="image" src="https://github.com/user-attachments/assets/b7431090-f935-4f78-854f-7ff337ad03be" />
