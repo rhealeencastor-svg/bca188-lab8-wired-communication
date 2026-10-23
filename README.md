@@ -59,3 +59,7 @@ For active-low CS, HIGH deselects the device and ends the transfer. LOW selects 
 ## Documentation
 
 My labeled wiring photo and Serial Monitor screenshots are pending upload. The screenshot of SPI without the jumper will show the received values.
+
+
+## PROOF OF MOLE UNABLE TO OPEN:
+<img width="1512" height="982" alt="Screenshot 2026-10-23 at 11 56 19 PM" src="https://github.com/user-attachments/assets/8496b7a2-c9c2-4cf4-ad57-0be5912a1186" />
