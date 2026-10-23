@@ -4,41 +4,41 @@
 
 BCA188 - Programming For Internet of Things
 
-UART, I2C, and SPI tests using an ESP32 WROOM-32 and an I2C OLED.
+I tested UART, I2C, and SPI using an ESP32 WROOM-32 and an I2C OLED.
 
 ## Pins and connections
 
 | Signal | GPIO | Connection |
 |---|---:|---|
-| UART TX | 17 | Connect to GPIO16 |
-| UART RX | 16 | Connect to GPIO17 |
+| UART TX | 17 | GPIO16 |
+| UART RX | 16 | GPIO17 |
 | I2C SDA | 21 | OLED SDA |
 | I2C SCL | 22 | OLED SCL |
 | SPI SCK | 18 | No external connection for loopback |
-| SPI MOSI | 23 | Connect to GPIO19 |
-| SPI MISO | 19 | Connect to GPIO23 |
+| SPI MOSI | 23 | GPIO19 |
+| SPI MISO | 19 | GPIO23 |
 | SPI CS | 27 | No external connection for loopback |
 
-OLED VCC connects to **3V3**, and OLED GND connects to **GND**.
+I connected the OLED's VCC to **3V3** and GND to **GND**.
 
 ## Sketches
 
-- [uart_loopback](uart_loopback/uart_loopback.ino): sends PING through Serial2 at 9600 baud and prints received bytes.
-- [i2c_scanner](i2c_scanner/i2c_scanner.ino): scans for I2C devices once at startup.
-- [spi_loopback](spi_loopback/spi_loopback.ino): sends 0xA5 at 1 MHz, MSB first, SPI mode 0.
+- [uart_loopback](uart_loopback/uart_loopback.ino): I sent PING through Serial2 at 9600 baud and checked the received bytes.
+- [i2c_scanner](i2c_scanner/i2c_scanner.ino): I scanned for the OLED's I2C address.
+- [spi_loopback](spi_loopback/spi_loopback.ino): I sent 0xA5 at 1 MHz, MSB first, using SPI mode 0.
 
-Upload one sketch at a time. Use Serial Monitor at **115200 baud**, except during the baud-rate test. Unplug USB before changing wires.
+I uploaded the sketches separately and used Serial Monitor at **115200 baud**, except for the matching 9600-baud test.
 
 ## Results
 
 | Test | Expected | Observed |
 |---|---|---|
 | UART with jumper | PING once per second | PING appeared once per second. |
-| UART without jumper | PING stops | No PING received. |
+| UART without jumper | No repeated PING | No PING received. |
 | I2C with OLED | OLED address detected | Found device at 0x3C. |
 | I2C without OLED | No devices detected | No I2C devices found. |
-| SPI with jumper | Receive 0xA5 | Received 0xA5. |
-| SPI without jumper | Receive a different value | Received a value different from 0xA5. |
+| SPI with jumper | 0xA5 received | Received 0xA5. |
+| SPI without jumper | A value different from 0xA5 | Received a value different from 0xA5. |
 | Sketch at 9600, monitor at 115200 | Unreadable output | Output was unreadable. |
 | Sketch at 9600, monitor at 9600 | Readable PING | PING was readable. |
 
@@ -46,11 +46,11 @@ Upload one sketch at a time. Use Serial Monitor at **115200 baud**, except durin
 
 **Why does UART need matching baud rates, while SPI uses a clock line?**
 
-UART has no separate clock, so both sides need matching bit timing. SPI uses SCK to synchronize the data.
+UART has no separate clock, so both sides need matching bit timing to read the data correctly. SPI uses SCK to synchronize the data.
 
 **Why can't two devices with the same address share one I2C bus?**
 
-Both would respond to the same address, so the controller could not select them separately and their responses could interfere.
+Both devices would respond to the same address, so the controller could not select them separately. Their responses could also interfere with each other.
 
 **Why is CS HIGH between SPI transfers?**
 
@@ -58,4 +58,4 @@ For active-low CS, HIGH deselects the device and ends the transfer. LOW selects 
 
 ## Documentation
 
-The labeled wiring photo and Serial Monitor screenshots for all eight tests will be uploaded here. The SPI screenshot without the jumper will show the actual received values.
+My labeled wiring photo and Serial Monitor screenshots are pending upload. The screenshot of SPI without the jumper will show the received values.
