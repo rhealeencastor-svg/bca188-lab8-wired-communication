@@ -1,6 +1,6 @@
 # Laboratory Activity 8: Wired Communication
 
-**Rhea Leen Castor**
+**Rhea Leen P. Castor**
 
 BCA188 - Programming For Internet of Things
 
