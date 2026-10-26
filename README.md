@@ -37,14 +37,14 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 |---|---|---|---|
 | UART with jumper | PING once per second | PING appeared once per second. | [Uploaded](documentation/uart-with-jumper.png) |
 | UART without jumper | No repeated PING | No new PING appeared after disconnection; older lines remained visible. | [115200 capture](documentation/uart-without-jumper.png), [extra 9600 capture](documentation/uart-without-jumper-9600.png) |
-| I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled.png) |
-| I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
+| I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled-20261026.png) |
+| I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled-20261026.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
 | SPI without jumper | A value different from 0xA5 | Sent 0xA5, received 0x00. | [Uploaded](documentation/spi-without-jumper.png) |
 | UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
 | UART USB serial at 9600, monitor at 9600 | Readable PING | PING was readable with both baud rates set to 9600. | [Uploaded](documentation/uart-9600-monitor-9600.png) |
 
-All eight test captures are included below, along with UART wiring photos and recordings.
+All eight test captures are included below, along with my UART and I2C wiring photos and UART recordings.
 
 ## Questions
 
@@ -111,7 +111,15 @@ I also took a capture with the jumper disconnected while both the code and monit
 
 The scanner detected the OLED at address **0x3C**. This test checks its I2C response, so the screen does not need to display anything.
 
-![I2C scanner detecting the OLED at address 0x3C](documentation/i2c-with-oled.png)
+![I2C scanner detecting the OLED at address 0x3C](documentation/i2c-with-oled-20261026.png)
+
+My OLED was connected for this test. I used VCC to 3V3, GND to GND, SDA to GPIO21, and SCL to GPIO22.
+
+![My ESP32 and OLED setup for the connected I2C test](documentation/i2c-connected-wiring.jpg)
+
+I also photographed the monitor showing **Found device at 0x3C**.
+
+![Photo of Serial Monitor showing the OLED detected at 0x3C](documentation/i2c-found-monitor-photo.jpg)
 
 </details>
 
@@ -120,7 +128,11 @@ The scanner detected the OLED at address **0x3C**. This test checks its I2C resp
 
 After the next reset, the scanner printed **No I2C devices found**. The older 0x3C result is still visible above that reset.
 
-![I2C scanner reporting no devices after the next reset](documentation/i2c-without-oled.png)
+![I2C scanner reporting no devices after the next reset](documentation/i2c-without-oled-20261026.png)
+
+I disconnected the OLED wires for the test without a module.
+
+![My I2C setup with the OLED wires disconnected](documentation/i2c-disconnected-wiring.jpg)
 
 </details>
 
