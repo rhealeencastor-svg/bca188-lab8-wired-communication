@@ -36,7 +36,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | Test | Expected | Observed | Screenshot |
 |---|---|---|---|
 | UART with jumper | PING once per second | PING appeared once per second. | [Uploaded](documentation/uart-with-jumper.png) |
-| UART without jumper | No repeated PING | No PING received. | Pending upload |
+| UART without jumper | No repeated PING | PING text is visible in the capture; whether new lines stopped is awaiting confirmation. | [Uploaded; result needs confirmation](documentation/uart-without-jumper.png) |
 | I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled.png) |
 | I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
@@ -44,7 +44,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | Sketch at 9600, monitor at 115200 | Unreadable output | Output was unreadable. | Pending upload |
 | Sketch at 9600, monitor at 9600 | Readable PING | PING was readable. | Pending upload |
 
-Four test screenshots are included below. The other test captures are still pending upload.
+Five Serial Monitor captures are included below. The UART disconnection result needs confirmation; the SPI-without-jumper and both baud-rate captures are still pending upload.
 
 ## Questions
 
@@ -61,7 +61,6 @@ Both devices would respond to the same address, so the controller could not sele
 For active-low CS, HIGH deselects the device and ends the transfer. LOW selects it for the next transfer.
 
 ## Documentation
-<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/634669b5-90b4-44d3-bd37-bf33d1d6c48a" />
 
 My original screenshots are saved in [documentation](documentation/).
 
@@ -75,7 +74,16 @@ The monitor shows repeated PING lines. USB serial is set to 115200 baud, while S
 </details>
 
 <details>
-<summary>2. I2C with OLED — address 0x3C found</summary>
+<summary>2. UART disconnection capture — result awaiting confirmation</summary>
+
+This is my capture for the UART test after disconnecting the jumper. PING text is still visible. The image alone does not show whether these were retained lines or whether new lines continued, so the result is awaiting confirmation.
+
+![UART disconnection capture at 115200 baud with PING text still visible](documentation/uart-without-jumper.png)
+
+</details>
+
+<details>
+<summary>3. I2C with OLED — address 0x3C found</summary>
 
 The scanner detected the OLED at address **0x3C**. This test checks its I2C response, so the screen does not need to display anything.
 
@@ -84,7 +92,7 @@ The scanner detected the OLED at address **0x3C**. This test checks its I2C resp
 </details>
 
 <details>
-<summary>3. I2C without OLED — no devices found</summary>
+<summary>4. I2C without OLED — no devices found</summary>
 
 After the next reset, the scanner printed **No I2C devices found**. The older 0x3C result is still visible above that reset.
 
@@ -93,7 +101,7 @@ After the next reset, the scanner printed **No I2C devices found**. The older 0x
 </details>
 
 <details>
-<summary>4. SPI with jumper — 0xA5 received</summary>
+<summary>5. SPI with jumper — 0xA5 received</summary>
 
 The monitor shows **Sent 0xA5, received 0xA5**, so the transmitted and received bytes matched.
 
