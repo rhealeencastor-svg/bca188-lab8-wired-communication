@@ -36,7 +36,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | Test | Expected | Observed | Screenshot |
 |---|---|---|---|
 | UART with jumper | PING once per second | PING appeared once per second. | [Uploaded](documentation/uart-with-jumper.png) |
-| UART without jumper | No repeated PING | PING text is visible in the capture; whether new lines stopped is awaiting confirmation. | [Uploaded; result needs confirmation](documentation/uart-without-jumper.png) |
+| UART without jumper | No repeated PING | No new PING appeared after disconnection; older lines remained visible. | [Uploaded](documentation/uart-without-jumper.png) |
 | I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled.png) |
 | I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
@@ -44,7 +44,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | Sketch at 9600, monitor at 115200 | Unreadable output | Output was unreadable. | Pending upload |
 | Sketch at 9600, monitor at 9600 | Readable PING | PING was readable. | Pending upload |
 
-Five Serial Monitor captures are included below. The UART disconnection result needs confirmation; the SPI-without-jumper and both baud-rate captures are still pending upload.
+Five Serial Monitor captures are included below. The SPI-without-jumper and both baud-rate captures are still pending upload.
 
 ## Questions
 
@@ -74,11 +74,11 @@ The monitor shows repeated PING lines. USB serial is set to 115200 baud, while S
 </details>
 
 <details>
-<summary>2. UART disconnection capture — result awaiting confirmation</summary>
+<summary>2. UART without jumper — no new PING</summary>
 
-This is my capture for the UART test after disconnecting the jumper. PING text is still visible. The image alone does not show whether these were retained lines or whether new lines continued, so the result is awaiting confirmation.
+After I disconnected the jumper, no new PING lines appeared. The PING lines visible in this screenshot were left over from the earlier test with the jumper connected.
 
-![UART disconnection capture at 115200 baud with PING text still visible](documentation/uart-without-jumper.png)
+![UART without jumper at 115200 baud with older PING lines retained](documentation/uart-without-jumper.png)
 
 </details>
 
