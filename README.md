@@ -42,9 +42,9 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
 | SPI without jumper | A value different from 0xA5 | Sent 0xA5, received 0x00. | [Uploaded](documentation/spi-without-jumper.png) |
 | UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
-| UART USB serial at 9600, monitor at 9600 | Readable PING | Not yet documented | Pending upload |
+| UART USB serial at 9600, monitor at 9600 | Readable PING | PING was readable with both baud rates set to 9600. | [Uploaded](documentation/uart-9600-monitor-9600.png) |
 
-Seven Serial Monitor captures are included below. The matching UART 9600-baud capture is still pending documentation.
+All eight test captures are included below.
 
 ## Questions
 
@@ -124,6 +124,15 @@ With the MOSI-to-MISO jumper disconnected, the monitor shows **Sent 0xA5, receiv
 My code is set to **9600 baud**, while Serial Monitor is set to **115200 baud**. This capture shows startup text but no readable PING. The startup text is separate from the loopback output.
 
 ![UART code at 9600 and monitor at 115200 showing startup text without readable PING](documentation/uart-9600-monitor-115200.png)
+
+</details>
+
+<details>
+<summary>8. UART code 9600 / monitor 9600 — readable PING</summary>
+
+With my code and Serial Monitor both set to **9600 baud**, PING was readable again. This shows the difference between matching baud rates and the earlier 9600/115200 settings.
+
+![UART code and Serial Monitor both at 9600 baud showing readable PING](documentation/uart-9600-monitor-9600.png)
 
 </details>
 

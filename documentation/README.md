@@ -11,7 +11,8 @@ These are my original screenshots. The captions in the main README identify each
 | [SPI with jumper](spi-with-jumper.png) | Sent 0xA5, received 0xA5. |
 | [SPI without jumper](spi-without-jumper.png) | Sent 0xA5, received 0x00. |
 | [UART code 9600 / monitor 115200](uart-9600-monitor-115200.png) | Startup text is visible, with no readable PING in the capture. |
+| [UART code 9600 / monitor 9600](uart-9600-monitor-9600.png) | Readable PING with both baud rates set to 9600. |
 | [MOLE desktop error](mole-signin-error.png) | Safari sign-in connection error on October 23 at 11:56 PM. |
 | [MOLE mobile loading](mole-mobile-loading.png) | Dashboard loading indicators at 23:58. |
 
-My UART-without-jumper capture is uploaded. No new PING appeared after I disconnected the jumper. My capture with both the UART code and monitor set to 9600 baud is still pending upload. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.
+All eight test captures are uploaded. The UART-without-jumper screenshot retains older PING lines; no new PING appeared after I disconnected the jumper. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.
