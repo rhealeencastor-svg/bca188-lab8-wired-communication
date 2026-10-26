@@ -6,6 +6,7 @@ These are my original screenshots. The captions in the main README identify each
 |---|---|
 | [UART with jumper](uart-with-jumper.png) | Repeated PING in Serial Monitor at 115200 baud. |
 | [UART without jumper](uart-without-jumper.png) | No new PING appeared after disconnection; the visible lines were retained from the connected test. |
+| [Extra UART-disconnected capture at 9600](uart-without-jumper-9600.png) | Code and monitor at 9600; older PING lines remain above the reset text. |
 | [I2C with OLED](i2c-with-oled.png) | Found device at 0x3C. |
 | [I2C without OLED](i2c-without-oled.png) | No I2C devices found after the next reset. |
 | [SPI with jumper](spi-with-jumper.png) | Sent 0xA5, received 0xA5. |

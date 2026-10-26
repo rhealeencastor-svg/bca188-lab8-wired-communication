@@ -36,7 +36,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | Test | Expected | Observed | Screenshot |
 |---|---|---|---|
 | UART with jumper | PING once per second | PING appeared once per second. | [Uploaded](documentation/uart-with-jumper.png) |
-| UART without jumper | No repeated PING | No new PING appeared after disconnection; older lines remained visible. | [Uploaded](documentation/uart-without-jumper.png) |
+| UART without jumper | No repeated PING | No new PING appeared after disconnection; older lines remained visible. | [115200 capture](documentation/uart-without-jumper.png), [extra 9600 capture](documentation/uart-without-jumper-9600.png) |
 | I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled.png) |
 | I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
@@ -44,7 +44,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
 | UART USB serial at 9600, monitor at 9600 | Readable PING | PING was readable with both baud rates set to 9600. | [Uploaded](documentation/uart-9600-monitor-9600.png) |
 
-All eight test captures are included below.
+All eight test captures are included below, along with an additional UART-disconnected capture at 9600 baud.
 
 ## Questions
 
@@ -79,6 +79,10 @@ The monitor shows repeated PING lines. USB serial is set to 115200 baud, while S
 After I disconnected the jumper, no new PING lines appeared. The PING lines visible in this screenshot were left over from the earlier test with the jumper connected.
 
 ![UART without jumper at 115200 baud with older PING lines retained](documentation/uart-without-jumper.png)
+
+I also took a capture with the jumper disconnected while both the code and monitor were set to **9600 baud**. Older PING lines remain visible above the reset text.
+
+![Additional UART-disconnected capture with code and monitor at 9600 and retained PING lines above reset text](documentation/uart-without-jumper-9600.png)
 
 </details>
 
