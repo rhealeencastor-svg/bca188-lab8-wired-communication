@@ -1,7 +1,7 @@
 # Laboratory Activity 8: Wired Communication
 
 **Rhea Leen P. Castor**
-
+2024-2802
 BCA188 - Programming For Internet of Things
 
 I tested UART, I2C, and SPI using an ESP32 and an I2C OLED.
