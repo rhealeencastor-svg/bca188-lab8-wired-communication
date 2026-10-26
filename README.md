@@ -61,6 +61,7 @@ Both devices would respond to the same address, so the controller could not sele
 For active-low CS, HIGH deselects the device and ends the transfer. LOW selects it for the next transfer.
 
 ## Documentation
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/634669b5-90b4-44d3-bd37-bf33d1d6c48a" />
 
 My original screenshots are saved in [documentation](documentation/).
 
