@@ -9,7 +9,8 @@ These are my original screenshots. The captions in the main README identify each
 | [I2C with OLED](i2c-with-oled.png) | Found device at 0x3C. |
 | [I2C without OLED](i2c-without-oled.png) | No I2C devices found after the next reset. |
 | [SPI with jumper](spi-with-jumper.png) | Sent 0xA5, received 0xA5. |
+| [SPI without jumper](spi-without-jumper.png) | Sent 0xA5, received 0x00. |
 | [MOLE desktop error](mole-signin-error.png) | Safari sign-in connection error on October 23 at 11:56 PM. |
 | [MOLE mobile loading](mole-mobile-loading.png) | Dashboard loading indicators at 23:58. |
 
-My UART-without-jumper capture is uploaded. No new PING appeared after I disconnected the jumper. My separate captures for SPI without the jumper and both 9600-baud tests are still pending upload. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.
+My UART-without-jumper capture is uploaded. No new PING appeared after I disconnected the jumper. My separate captures for both UART 9600-baud tests are still pending upload. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.

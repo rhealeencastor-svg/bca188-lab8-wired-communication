@@ -40,11 +40,11 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | I2C with OLED | OLED address detected | Found device at 0x3C. | [Uploaded](documentation/i2c-with-oled.png) |
 | I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
-| SPI without jumper | A value different from 0xA5 | Received a value different from 0xA5. | Dedicated capture pending |
-| Sketch at 9600, monitor at 115200 | Unreadable output | Output was unreadable. | Pending upload |
-| Sketch at 9600, monitor at 9600 | Readable PING | PING was readable. | Pending upload |
+| SPI without jumper | A value different from 0xA5 | Sent 0xA5, received 0x00. | [Uploaded](documentation/spi-without-jumper.png) |
+| UART USB serial at 9600, monitor at 115200 | Unreadable output | Not yet documented | Pending upload |
+| UART USB serial at 9600, monitor at 9600 | Readable PING | Not yet documented | Pending upload |
 
-Five Serial Monitor captures are included below. The SPI-without-jumper and both baud-rate captures are still pending upload.
+Six Serial Monitor captures are included below. The two UART baud-rate tests are still pending documentation.
 
 ## Questions
 
@@ -106,6 +106,15 @@ After the next reset, the scanner printed **No I2C devices found**. The older 0x
 The monitor shows **Sent 0xA5, received 0xA5**, so the transmitted and received bytes matched.
 
 ![SPI loopback showing sent 0xA5 and received 0xA5](documentation/spi-with-jumper.png)
+
+</details>
+
+<details>
+<summary>6. SPI without jumper — 0x00 received</summary>
+
+With the MOSI-to-MISO jumper disconnected, the monitor shows **Sent 0xA5, received 0x00**. The received byte differed from 0xA5. This was my observed value; an unconnected MISO does not have one guaranteed value.
+
+![SPI without jumper showing sent 0xA5 and received 0x00](documentation/spi-without-jumper.png)
 
 </details>
 
