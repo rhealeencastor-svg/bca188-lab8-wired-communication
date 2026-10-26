@@ -44,7 +44,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
 | UART USB serial at 9600, monitor at 9600 | Readable PING | PING was readable with both baud rates set to 9600. | [Uploaded](documentation/uart-9600-monitor-9600.png) |
 
-All eight test captures are included below, along with an additional UART-disconnected capture at 9600 baud.
+All eight test captures are included below, along with UART wiring photos and recordings.
 
 ## Questions
 
@@ -62,7 +62,7 @@ For active-low CS, HIGH deselects the device and ends the transfer. LOW selects 
 
 ## Documentation
 
-My original screenshots are saved in [documentation](documentation/).
+My screenshots, wiring photos, and recordings are saved in [documentation](documentation/).
 
 <details>
 <summary>1. UART with jumper — PING received</summary>
@@ -70,6 +70,16 @@ My original screenshots are saved in [documentation](documentation/).
 The monitor shows repeated PING lines. USB serial is set to 115200 baud, while Serial2 uses 9600 baud.
 
 ![UART loopback showing repeated PING at 115200 monitor baud](documentation/uart-with-jumper.png)
+
+I connected **GPIO17 (TX)** to **GPIO16 (RX)** through the breadboard. The OLED is also visible in my setup.
+
+![My UART setup with the GPIO17-to-GPIO16 connection joined on the breadboard](documentation/uart-connected-wiring.jpg)
+
+In this **27-second recording**, PING appears before I remove the jumper. After I clear the monitor, no new PING appears.
+
+https://github.com/user-attachments/assets/2284021b-3dc7-4259-aea7-40a2ec16baa5
+
+[Download the UART demonstration](documentation/uart-ping-demo.mp4)
 
 </details>
 
@@ -79,6 +89,16 @@ The monitor shows repeated PING lines. USB serial is set to 115200 baud, while S
 After I disconnected the jumper, no new PING lines appeared. The PING lines visible in this screenshot were left over from the earlier test with the jumper connected.
 
 ![UART without jumper at 115200 baud with older PING lines retained](documentation/uart-without-jumper.png)
+
+I removed one end of the connection between GPIO17 and GPIO16.
+
+![My UART setup with one jumper end disconnected](documentation/uart-disconnected-wiring.jpg)
+
+This **12-second recording** shows the disconnected test. The previous PING and reset messages remain on screen, with no new PING appearing.
+
+https://github.com/user-attachments/assets/7beb164e-2e7f-463b-9bc7-e64e15fe48ab
+
+[Download the disconnected UART recording](documentation/uart-disconnected-demo.mp4)
 
 I also took a capture with the jumper disconnected while both the code and monitor were set to **9600 baud**. Older PING lines remain visible above the reset text.
 

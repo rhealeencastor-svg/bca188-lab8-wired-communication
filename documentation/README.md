@@ -1,11 +1,15 @@
 # Lab 8 Documentation
 
-These are my original screenshots. The captions in the main README identify each test.
+These are my screenshots, wiring photos, and recordings. The captions in the main README identify each test.
 
 | File | What it shows |
 |---|---|
 | [UART with jumper](uart-with-jumper.png) | Repeated PING in Serial Monitor at 115200 baud. |
 | [UART without jumper](uart-without-jumper.png) | No new PING appeared after disconnection; the visible lines were retained from the connected test. |
+| [UART connected wiring photo](uart-connected-wiring.jpg) | GPIO17 (TX) connected to GPIO16 (RX) through the breadboard. |
+| [UART disconnected wiring photo](uart-disconnected-wiring.jpg) | One end of the GPIO17-to-GPIO16 connection removed. |
+| [UART demonstration, 27 seconds](uart-ping-demo.mp4) | PING before the jumper is removed, followed by no new output after clearing the monitor. |
+| [UART disconnected recording, 12 seconds](uart-disconnected-demo.mp4) | Previous PING and reset messages remain, with no new PING during the disconnected test. |
 | [Extra UART-disconnected capture at 9600](uart-without-jumper-9600.png) | Code and monitor at 9600; older PING lines remain above the reset text. |
 | [I2C with OLED](i2c-with-oled.png) | Found device at 0x3C. |
 | [I2C without OLED](i2c-without-oled.png) | No I2C devices found after the next reset. |
@@ -16,4 +20,4 @@ These are my original screenshots. The captions in the main README identify each
 | [MOLE desktop error](mole-signin-error.png) | Safari sign-in connection error on October 23 at 11:56 PM. |
 | [MOLE mobile loading](mole-mobile-loading.png) | Dashboard loading indicators at 23:58. |
 
-All eight test captures are uploaded. The UART-without-jumper screenshot retains older PING lines; no new PING appeared after I disconnected the jumper. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.
+All eight test captures, two UART wiring photos, and two UART recordings are uploaded. The UART-without-jumper screenshot retains older PING lines; no new PING appeared after I disconnected the jumper. The [wiring diagram](../images/wiring.svg) labels the GPIO connections used by my sketches.
