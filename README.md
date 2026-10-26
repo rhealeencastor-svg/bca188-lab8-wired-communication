@@ -44,7 +44,7 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
 | UART USB serial at 9600, monitor at 9600 | Readable PING | PING was readable with both baud rates set to 9600. | [Uploaded](documentation/uart-9600-monitor-9600.png) |
 
-All eight test captures are included below, along with my UART and I2C wiring photos and UART recordings.
+All eight test captures are included below, along with my wiring photos and UART and SPI recordings.
 
 ## Questions
 
@@ -143,6 +143,16 @@ The monitor shows **Sent 0xA5, received 0xA5**, so the transmitted and received 
 
 ![SPI loopback showing sent 0xA5 and received 0xA5](documentation/spi-with-jumper.png)
 
+I connected **GPIO23 (MOSI)** to **GPIO19 (MISO)** through the breadboard for the loopback test.
+
+![My SPI setup with the loopback jumper connected](documentation/spi-connected-wiring.jpg)
+
+My **15-second recording** shows repeated **Sent 0xA5, received 0xA5**.
+
+https://github.com/user-attachments/assets/c89417ab-446a-4cb1-8a8a-c663c0c2e55f
+
+[Download the connected SPI recording](documentation/spi-connected-demo.mp4)
+
 </details>
 
 <details>
@@ -151,6 +161,16 @@ The monitor shows **Sent 0xA5, received 0xA5**, so the transmitted and received 
 With the MOSI-to-MISO jumper disconnected, the monitor shows **Sent 0xA5, received 0x00**. The received byte differed from 0xA5. This was my observed value; an unconnected MISO does not have one guaranteed value.
 
 ![SPI without jumper showing sent 0xA5 and received 0x00](documentation/spi-without-jumper.png)
+
+I removed one end of the MOSI-to-MISO connection.
+
+![My SPI setup with one jumper end disconnected](documentation/spi-disconnected-wiring.jpg)
+
+My **10-second recording** shows repeated **Sent 0xA5, received 0x00**.
+
+https://github.com/user-attachments/assets/a7458a6d-94c4-49a7-9632-43e6c22f771e
+
+[Download the disconnected SPI recording](documentation/spi-disconnected-demo.mp4)
 
 </details>
 
