@@ -41,10 +41,10 @@ I uploaded the sketches separately and used Serial Monitor at **115200 baud**, e
 | I2C without OLED | No devices detected | No I2C devices found. | [Uploaded](documentation/i2c-without-oled.png) |
 | SPI with jumper | 0xA5 received | Received 0xA5. | [Uploaded](documentation/spi-with-jumper.png) |
 | SPI without jumper | A value different from 0xA5 | Sent 0xA5, received 0x00. | [Uploaded](documentation/spi-without-jumper.png) |
-| UART USB serial at 9600, monitor at 115200 | Unreadable output | Not yet documented | Pending upload |
+| UART USB serial at 9600, monitor at 115200 | Unreadable PING output | Only startup text is visible; no readable PING appears in this capture. | [Uploaded](documentation/uart-9600-monitor-115200.png) |
 | UART USB serial at 9600, monitor at 9600 | Readable PING | Not yet documented | Pending upload |
 
-Six Serial Monitor captures are included below. The two UART baud-rate tests are still pending documentation.
+Seven Serial Monitor captures are included below. The matching UART 9600-baud capture is still pending documentation.
 
 ## Questions
 
@@ -61,7 +61,6 @@ Both devices would respond to the same address, so the controller could not sele
 For active-low CS, HIGH deselects the device and ends the transfer. LOW selects it for the next transfer.
 
 ## Documentation
-<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/2f1093fe-4a96-441b-a14d-b1d73a6c4676" />
 
 My original screenshots are saved in [documentation](documentation/).
 
@@ -116,6 +115,15 @@ The monitor shows **Sent 0xA5, received 0xA5**, so the transmitted and received 
 With the MOSI-to-MISO jumper disconnected, the monitor shows **Sent 0xA5, received 0x00**. The received byte differed from 0xA5. This was my observed value; an unconnected MISO does not have one guaranteed value.
 
 ![SPI without jumper showing sent 0xA5 and received 0x00](documentation/spi-without-jumper.png)
+
+</details>
+
+<details>
+<summary>7. UART code 9600 / monitor 115200 — no readable PING</summary>
+
+My code is set to **9600 baud**, while Serial Monitor is set to **115200 baud**. This capture shows startup text but no readable PING. The startup text is separate from the loopback output.
+
+![UART code at 9600 and monitor at 115200 showing startup text without readable PING](documentation/uart-9600-monitor-115200.png)
 
 </details>
 
